@@ -1,12 +1,14 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
+
 import Header from './header/Header';
 import Footer from './footer/Footer';
 
-const DefaultLayout = ({ children }) => {
+const DefaultLayout = () => {
     return (
-        <div>
+        <div className="app">
             <Header></Header>
-            {children}
+                  <Outlet />
             <Footer></Footer>
         </div>
     );
