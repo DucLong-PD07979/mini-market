@@ -1,0 +1,59 @@
+.menu-drop-wrap {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    .menu-drop-header {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        .menu-title {
+            font-size: 1.4rem;
+            text-transform: uppercase;
+            font-weight: 600;
+            padding: 0 4px;
+        }
+
+        svg {
+            fill: $while-color;
+        }
+    }
+
+    .menu-list {
+        position: absolute;
+        display: none;
+        top: calc(100% + 6px);
+        right: 0;
+        min-width: 200px;
+        background-color: $while-color;
+        color: $text-color;
+        font-weight: 600;
+        text-transform: uppercase;
+        border-radius: 6px;
+        overflow: hidden;
+        padding: 8px 0;
+        font-size: 1.2rem;
+        z-index: 1;
+        @include boxsadow(0px, 6px, 12px, 0, rgba(0, 0, 0, 0.16));
+
+        span{
+            margin-right: 8px;
+        }
+    }
+
+    .menu-wrap-item.active .menu-list {
+        display: block;
+    }
+
+    .menu-list .menu-list-item {
+        padding: 8px 16px;
+
+        &:hover {
+            background-color: $hover-color;
+            color: $primary-color;
+        }
+    }
+}

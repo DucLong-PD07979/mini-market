@@ -1,0 +1,66 @@
+header {
+    width: 100%;
+    background-color: $blue-color;
+    color: $while-color;
+    .header-top {
+        background: $blue-color;
+        width: 100%;
+        height: $header-top-height;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        font-size: 1.3rem;
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: $header-top-height;
+        }
+
+        .header-top-left {
+            display: flex;
+        }
+    }
+
+    .wrapp-contact-icon {
+        display: flex;
+        align-items: center;
+
+        .header-icon {
+            margin-right: 12px;
+
+            svg {
+                fill: $while-color;
+            }
+        }
+    }
+
+    .wrapp-contact-icon + .wrapp-contact-icon {
+        margin-left: 18px;
+    }
+
+    .header-top-right {
+        display: flex;
+        align-items: center;
+        height: 100%;
+
+        .header-top-link {
+            padding: 0 8px;
+            margin-right: 18px;
+
+            &:hover {
+                color: $primary-color;
+            }
+        }
+
+        .header-top-currency {
+            margin-left: 20px;
+            height: 100%;
+        }
+
+        .menu-drop-header img {
+            border-radius: 5px;
+        }
+    }
+}
