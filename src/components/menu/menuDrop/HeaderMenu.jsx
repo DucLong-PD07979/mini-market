@@ -12,9 +12,9 @@ const HeaderMenu = ({ title = 'menu drop', icon = true, src = false, handleToggl
             className={cs('menu-drop-header')}
             onClick={handleToggle}
         >
-            {src && <ImageLoaded src={src} />}
+            {src && <ImageLoaded src={src} alt={title}/>}
             <span className={cs('menu-title')}>{title}</span>
-            {icon && <ArrowDownIcon className="header-icon" />}
+            {icon && <ArrowDownIcon />}
         </div>
     );
 };
@@ -23,6 +23,7 @@ HeaderMenu.propTypes = {
     title: PropTypes.string.isRequired,
     icon: PropTypes.bool,
     img: PropTypes.string,
+    handleToggle: PropTypes.func.isRequired
 };
 
 export default HeaderMenu;

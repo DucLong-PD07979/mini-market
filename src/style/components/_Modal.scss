@@ -1,0 +1,51 @@
+.modal-wrapper {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    width: 100vw;
+    height: 100vh;
+    @include transition(all,0.3s,linear);
+
+    .modal-overlay {
+        width: inherit;
+        height: inherit;
+        background-color: $modalColorOverlay;
+        z-index: -1;
+        position: absolute;
+        inset: 0;
+    }
+
+    .modal-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background-color: $while-color;
+        border-radius: 10px;
+        // padding: 20px;
+        min-height: 500px;
+        min-width: 570px;
+        transform: translate(-50%,-50%);
+        z-index: 2;
+    }
+
+    .modal-close{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 30px;
+        height: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transform: translate(50%,-50%);
+        border-radius: 999px;
+        background-color: $border-color;
+        color: $gray-color;
+
+        &:hover{
+            background-color: $gray-color;
+            color: $while-color;
+        }
+    }
+}

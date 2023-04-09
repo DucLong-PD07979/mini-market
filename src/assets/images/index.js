@@ -4,4 +4,5 @@ export const images = {
     HN: require('./in.png'),
     BD: require('./bd.png'),
     UC: require('./uk.png'),
+    LOGO: require('./logo.svg').default
 };

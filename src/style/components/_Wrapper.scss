@@ -1,0 +1,5 @@
+.wrapper {
+    width: auto;
+    height: auto;
+    @include boxsadow(0px, 8px, 45px, 0, rgba(3, 0, 71, 0.09));
+}

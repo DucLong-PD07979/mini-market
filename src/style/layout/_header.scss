@@ -1,6 +1,5 @@
 header {
     width: 100%;
-    background-color: $blue-color;
     color: $while-color;
     .header-top {
         background: $blue-color;
@@ -48,6 +47,9 @@ header {
         .header-top-link {
             padding: 0 8px;
             margin-right: 18px;
+            display: flex;
+            align-items: center;
+            height: 100%;
 
             &:hover {
                 color: $primary-color;
@@ -61,6 +63,249 @@ header {
 
         .menu-drop-header img {
             border-radius: 5px;
+        }
+    }
+
+    .header-bottom {
+        width: 100%;
+        height: auto;
+    }
+
+    .header-bottom-logo-and-search-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: $header-bottom-with-logo;
+        @include transition(all, 0.3s, linear);
+    }
+
+    .header-search-wrap {
+        border: 1px solid $border-color;
+        padding: 6px;
+        border-radius: 999px;
+        display: flex;
+        align-items: center;
+        color: $gray-color;
+        padding: 0 12px;
+        height: $header-search-height;
+        width: $header-search-width;
+        position: relative;
+
+        input {
+            width: 100%;
+            height: 100%;
+            padding: 0 8px;
+            font-size: 1.6rem;
+            font-weight: 300;
+            color: currentColor;
+        }
+
+        .search-with-categorie {
+            width: fit-content;
+            flex: 0 0 auto;
+            padding: 0 4px 0 12px;
+            height: 100%;
+            position: relative;
+            border: 1px solid transparent;
+
+            &::before {
+                content: '';
+                width: 0.3px;
+                height: 100%;
+                background-color: $border-color;
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0px;
+            }
+
+            .menu-title {
+                font-weight: 400;
+            }
+
+            .menu-list .menu-list-item {
+                font-weight: 400;
+                text-transform: capitalize;
+                font-size: 1.6rem;
+                color: $gray-color;
+                @include transition(all, 0.2s, linear);
+
+                &:hover {
+                    color: $primary-color;
+                }
+            }
+        }
+
+        &:hover {
+            border: 1px solid $gray-color;
+        }
+
+        &:focus-within {
+            border: 1px solid $primary-color;
+        }
+
+        .search-result {
+            display: none;
+        }
+
+        .search-result-active {
+            display: block;
+            padding: 8px 0;
+            position: absolute;
+            top: calc(100% + 6px);
+            left: 0;
+            width: 100%;
+            border-radius: 6px;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .search-result-list .search-result-list--item {
+            padding: 10px 12px;
+
+            &:hover {
+                background-color: $hover-color;
+                cursor: pointer;
+                color: $blue-color;
+            }
+        }
+    }
+
+    .header-user-action-wrap {
+        display: flex;
+        align-items: center;
+        color: $text-color;
+
+        .avatar-user,
+        .header-basket {
+            width: 50px;
+            height: 50px;
+            background-color: $hover-color;
+            border-radius: 999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+
+        .header-basket {
+            position: relative;
+        }
+
+        .header-count-quanity {
+            position: absolute;
+            min-width: 20px;
+            height: 20px;
+            min-width: 20px;
+            background-color: $primary-color;
+            font-size: 1rem;
+            top: 0;
+            right: -4px;
+            border-radius: 999px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: $while-color;
+            font-weight: 600;
+        }
+    }
+}
+
+.header-form-wrap {
+    width: 100%;
+    max-width: 570px;
+    #form-content {
+        padding: 3rem 5.5rem 0;
+        .header-form-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: $text-color;
+            font-weight: 700;
+            margin-bottom: 0.6rem;
+        }
+
+        .header-form-des {
+            margin-top: 6px;
+            text-align: center;
+            font-size: 1.4rem;
+            color: $gray-second;
+            margin-bottom: 4.2rem;
+            font-weight: 600;
+        }
+    }
+
+    .party-wall-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 16px 0 16px;
+        position: relative;
+
+        span {
+            color: $gray-second;
+            background-color: $while-color;
+            padding: 4px;
+        }
+
+        .party-wall-line {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: $hover-color;
+            z-index: -1;
+        }
+    }
+
+    .btn-signup {
+        margin-bottom: 15px;
+        font-weight: 600;
+        font-size: 1.4rem;
+        color: $while-color;
+
+        span {
+            margin-left: 6px;
+        }
+    }
+
+    .btn-signup-fa {
+        background-color: $login-facebook-color;
+    }
+
+    .btn-signup-go {
+        background-color: $login-google-color;
+    }
+
+    .not-account-alert-wrap {
+        margin: 32px 0;
+        text-align: center;
+        color: $gray-second;
+        span {
+            margin-right: 8px;
+        }
+    }
+
+    .footer-form-wrap {
+        padding: 20px;
+        background-color: $hover-color;
+        width: 100%;
+        text-align: center;
+        color: $gray-second;
+        border-radius: 0 0 10px 10px;
+        span {
+            margin-right: 8px;
+        }
+    }
+
+    .link-item-under {
+        text-decoration: underline;
+        font-weight: 600;
+        color: $text-color;
+
+        &:hover {
+            text-decoration: none;
         }
     }
 }

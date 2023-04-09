@@ -1,6 +1,13 @@
-
-@mixin boxsadow($x : 0,$y: 0,$blur: 0,$spread: 0,$color) {
+@mixin boxsadow($x: 0, $y: 0, $blur: 0, $spread: 0, $color) {
     -webkit-box-shadow: $x $y $blur $spread $color;
     box-shadow: $x $y $blur $spread $color;
 }
 
+@mixin transition($property: 'all',$duration,$typeRun: 'linear') {
+    -webkit-transition: $property $duration $typeRun;
+    -moz-transition: $property $duration $typeRun;
+    -ms-transition: $property $duration $typeRun;
+    -o-transition: $property $duration $typeRun;
+    transition: $property $duration $typeRun;
+    @content;
+}

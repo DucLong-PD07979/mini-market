@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap');
-// @import 'normalize.css';
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&display=swap');
+@import 'normalize.css';
 
 @import './abstracts/variable';
 
@@ -10,3 +10,7 @@
 @import './layout/header';
 
 @import './components/MenuDrop';
+@import './components/Wrapper';
+@import './components/Modal';
+@import './components/FormField';
+@import './components/Button'

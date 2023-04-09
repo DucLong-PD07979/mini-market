@@ -23,7 +23,7 @@ ImageLoaded.propTypes = {
     alt: PropTypes.string.isRequired,
     srcError : PropTypes.string,
     src: PropTypes.string,
-    props: PropTypes.any
+    className: PropTypes.string,
 };
 
 export default ImageLoaded;

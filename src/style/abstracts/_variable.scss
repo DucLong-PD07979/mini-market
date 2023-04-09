@@ -3,12 +3,22 @@ $font-family: 'Open Sans', sans-serif;
 // color setting
 $primary-color: #e94560;
 $blue-color: #0f3460;
-$text-color:rgb(43 52 69);
+$text-color:rgb(43, 52, 69);
 $yellow-color:#ffcd4e;
 $while-color: #fff;
-$gray-color:rgb(125 135 156);
+$gray-color:rgb(125, 135 ,156);
+$gray-second : rgb(55, 63, 80);
 
-$hover-color:rgb(246, 249, 252);
+$login-facebook-color: rgb(59, 89, 152);
+$login-google-color: rgb(66, 133, 244);
 
-// height seting 
+$hover-color:rgb(242, 243, 247);
+$border-color:rgb(218, 225, 231);
+
+$modalColorOverlay : rgba(6, 6, 6, 0.415);
+
+// height - width seting 
 $header-top-height: 40px;
+$header-bottom-with-logo: 80px;
+$header-search-height: 48px;
+$header-search-width: 770px
