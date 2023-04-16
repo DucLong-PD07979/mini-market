@@ -41,7 +41,7 @@ const FieldPassword = forwardRef(({ ...props }, ref) => {
 FieldPassword.propTypes = {
     classNames: PropTypes.string,
     label: PropTypes.string,
-    name: PropTypes.string,
+    name: PropTypes.string.isRequired,
     register: PropTypes.func.isRequired,
     errors: PropTypes.object,
     required: PropTypes.bool,

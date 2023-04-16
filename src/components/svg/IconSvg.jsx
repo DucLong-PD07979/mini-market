@@ -154,3 +154,95 @@ export const GoogleIcon = ({ className = '', width = '20', height = '20' }) => {
         </div>
     );
 };
+
+export const GridLayouIcon = ({ className = '', width = '20', height = '20' }) => {
+    return (
+        <div className={`icon-style ${className}`}>
+            <Icon width={width} height={height}>
+                <path
+                    d="M21 3C21.5523 3 22 3.44772 22 4V20C22 20.5523 21.5523 21 21 21H3C2.44772 21 2 20.5523 2 20V4C2 3.44772 2.44772 3 3 3H21ZM11 13H4V19H11V13ZM20 13H13V19H20V13ZM11 5H4V11H11V5ZM20 5H13V11H20V5Z"
+                    fill="currentColor"
+                ></path>
+            </Icon>
+        </div>
+    );
+};
+
+export const FashionIcon = ({ className = '', width = '20', height = '20' }) => {
+    return (
+        <div className={`icon-style ${className}`}>
+            <Icon width={width} height={height}>
+                <path
+                    d="M12.998 20H18.998V16H14.998V14H18.998V6H16.998V11L12.998 9.4V20ZM10.998 20V9.4L6.99805 11V6H4.99805V20H10.998ZM6.99805 4V3H16.998V4H19.998C20.5503 4 20.998 4.44772 20.998 5V21C20.998 21.5523 20.5503 22 19.998 22H3.99805C3.44576 22 2.99805 21.5523 2.99805 21V5C2.99805 4.44772 3.44576 4 3.99805 4H6.99805ZM11.998 8L15.498 5H8.49805L11.998 8Z"
+                    fill="currentColor"
+                ></path>
+            </Icon>
+        </div>
+    );
+};
+
+export const ArrowRightIcon = ({ className = '', width = '20', height = '20' }) => {
+    return (
+        <div className={`icon-style ${className}`}>
+            <Icon width={width} height={height}>
+                <path
+                    d="M13.1714 12.0007L8.22168 7.05093L9.63589 5.63672L15.9999 12.0007L9.63589 18.3646L8.22168 16.9504L13.1714 12.0007Z"
+                    fill="currentColor"
+                ></path>
+            </Icon>
+        </div>
+    );
+};
+
+export const ComputerIcon = ({ className = '', width = '20', height = '20' }) => {
+    return (
+        <div className={`icon-style ${className}`}>
+            <Icon width={width} height={height}>
+                <path
+                    d="M4 16H20V5H4V16ZM13 18V20H17V22H7V20H11V18H2.9918C2.44405 18 2 17.5511 2 16.9925V4.00748C2 3.45107 2.45531 3 2.9918 3H21.0082C21.556 3 22 3.44892 22 4.00748V16.9925C22 17.5489 21.5447 18 21.0082 18H13Z"
+                    fill="currentColor"
+                ></path>
+            </Icon>
+        </div>
+    );
+};
+
+export const LightbuldIcon = ({ className = '', width = '20', height = '20' }) => {
+    return (
+        <div className={`icon-style ${className}`}>
+            <Icon width={width} height={height}>
+                <path
+                    d="M9.97308 18H11V13H13V18H14.0269C14.1589 16.7984 14.7721 15.8065 15.7676 14.7226C15.8797 14.6006 16.5988 13.8564 16.6841 13.7501C17.5318 12.6931 18 11.385 18 10C18 6.68629 15.3137 4 12 4C8.68629 4 6 6.68629 6 10C6 11.3843 6.46774 12.6917 7.31462 13.7484C7.40004 13.855 8.12081 14.6012 8.23154 14.7218C9.22766 15.8064 9.84103 16.7984 9.97308 18ZM10 20V21H14V20H10ZM5.75395 14.9992C4.65645 13.6297 4 11.8915 4 10C4 5.58172 7.58172 2 12 2C16.4183 2 20 5.58172 20 10C20 11.8925 19.3428 13.6315 18.2443 15.0014C17.624 15.7748 16 17 16 18.5V21C16 22.1046 15.1046 23 14 23H10C8.89543 23 8 22.1046 8 21V18.5C8 17 6.37458 15.7736 5.75395 14.9992Z"
+                    fill="currentColor"
+                ></path>
+            </Icon>
+        </div>
+    );
+};
+
+export const StoreIcon = ({ className = '', width = '20', height = '20' }) => {
+    return (
+        <div className={`icon-style ${className}`}>
+            <Icon width={width} height={height}>
+                <path
+                    d="M21 13V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V13H2V11L3 6H21L22 11V13H21ZM5 13V19H19V13H5ZM4.03961 11H19.9604L19.3604 8H4.63961L4.03961 11ZM6 14H14V17H6V14ZM3 3H21V5H3V3Z"
+                    fill="currentColor"
+                ></path>
+            </Icon>
+        </div>
+    );
+};
+
+export const GiftIcon = ({ className = '', width = '20', height = '20' }) => {
+    return (
+        <div className={`icon-style ${className}`}>
+            <Icon width={width} height={height}>
+                <path
+                    d="M15.0049 2.00293C17.214 2.00293 19.0049 3.79379 19.0049 6.00293C19.0049 6.73196 18.8098 7.41544 18.4691 8.00404L23.0049 8.00293V10.0029H21.0049V20.0029C21.0049 20.5552 20.5572 21.0029 20.0049 21.0029H4.00488C3.4526 21.0029 3.00488 20.5552 3.00488 20.0029V10.0029H1.00488V8.00293L5.54065 8.00404C5.19992 7.41544 5.00488 6.73196 5.00488 6.00293C5.00488 3.79379 6.79574 2.00293 9.00488 2.00293C10.2001 2.00293 11.2729 2.52714 12.0058 3.35819C12.7369 2.52714 13.8097 2.00293 15.0049 2.00293ZM11.0049 10.0029H5.00488V19.0029H11.0049V10.0029ZM19.0049 10.0029H13.0049V19.0029H19.0049V10.0029ZM9.00488 4.00293C7.90031 4.00293 7.00488 4.89836 7.00488 6.00293C7.00488 7.05729 7.82076 7.92109 8.85562 7.99744L9.00488 8.00293H11.0049V6.00293C11.0049 5.00129 10.2686 4.17162 9.30766 4.0257L9.15415 4.00842L9.00488 4.00293ZM15.0049 4.00293C13.9505 4.00293 13.0867 4.81881 13.0104 5.85367L13.0049 6.00293V8.00293H15.0049C16.0592 8.00293 16.923 7.18705 16.9994 6.15219L17.0049 6.00293C17.0049 4.89836 16.1095 4.00293 15.0049 4.00293Z"
+                    fill="currentColor"
+                ></path>
+                ;
+            </Icon>
+        </div>
+    );
+};

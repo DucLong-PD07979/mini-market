@@ -5,7 +5,7 @@ import MenuItems from './MenuItems';
 
 const MenuDrop = ({ icon, title, itemsData, src = false, ...props }) => {
     const [toggle, setToggle] = useState(false);
-    const [titleName,setTitleName] = useState(title);
+    const [titleName, setTitleName] = useState(title);
 
     const handleToggle = () => {
         setToggle(!toggle);

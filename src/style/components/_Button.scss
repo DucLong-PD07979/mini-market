@@ -31,8 +31,16 @@
         border: 1px solid $gray-second;
         color: $gray-second;
     }
-    
+
     &[disable] {
         cursor: not-allowed;
+    }
+
+    .left-icon {
+        margin-right: 8px;
+    }
+
+    .right-icon {
+        margin-left: 8px;
     }
 }

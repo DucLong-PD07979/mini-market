@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { SearchIcon } from '../../../components/svg/IconSvg';
 import MenuDrop from '../../../components/menu/menuDrop/MenuDrop';
@@ -7,7 +6,6 @@ import { useFetch } from '../../../hooks';
 import { fetchCategories } from '../../../services/api/productsServices';
 import Wrapper from '../../../components/wrapper/Wrapper';
 import useDebonce from '../../../hooks/useDebonce';
-// import { SearchProducts } from '../helper';
 import { fetchSearchProducts } from '../../../services/api/productsServices';
 
 const Search = (props) => {
@@ -73,7 +71,5 @@ const Search = (props) => {
         </div>
     );
 };
-
-Search.propTypes = {};
 
 export default Search;

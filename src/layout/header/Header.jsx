@@ -7,17 +7,25 @@ import * as path from '../../util/constants/router';
 import ImageLoaded from '../../components/imageLoaded/ImageLoaded';
 import { images } from '../../assets/images';
 import Search from './components/Search';
-import { CartIcon, UserIcon } from '../../components/svg/IconSvg';
+import {
+    ArrowDownIcon,
+    CartIcon,
+    GridLayouIcon,
+    UserIcon,
+} from '../../components/svg/IconSvg';
 import PorTalModal from '../../components/reactPortal/PorTalModal';
 import Modal from '../../components/modal/Modal';
 import useModal from '../../hooks/useModal';
 import HeaderForm from './components/HeaderForm';
+import Button from '../../components/button/Button';
+import CategoriesList from './components/CategoriesList';
+import HeaderNavbarMenu from './components/HeaderNavbarMenu';
 
 const Header = (props) => {
     const cs = classNames;
 
     const { isShow, handleTogleModal, handleCLoseModal } = useModal();
-    
+
     return (
         <header>
             <div className={cs('header-top')}>
@@ -43,14 +51,14 @@ const Header = (props) => {
                             <a href="/" className={cs('header-top-link')}>
                                 Need Help?
                             </a>
-                            <div className="header-top-translate">
+                            <div className={cs('header-top-translate')}>
                                 <MenuDrop
                                     src={images.US}
                                     title={'en'}
                                     itemsData={traslateData}
                                 />
                             </div>
-                            <div className="header-top-currency">
+                            <div className={cs('header-top-currency')}>
                                 <MenuDrop
                                     src={images.US}
                                     title={'use'}
@@ -63,7 +71,7 @@ const Header = (props) => {
             </div>
             <div className={cs('header-bottom')}>
                 <div className="container">
-                    <div className="header-bottom-logo-and-search-wrap">
+                    <div className={cs('header-bottom-logo-and-search-wrap')}>
                         <Link to={path.HOME} className="header-bottom-logo">
                             <ImageLoaded src={images.LOGO} alt="logo" />
                         </Link>
@@ -84,6 +92,20 @@ const Header = (props) => {
                                 </PorTalModal>
                             )}
                         </div>
+                    </div>
+                    <div className={cs('header-bottom-navbar-wrap')}>
+                        <div className={cs('header-categories-navbar-wrap')}>
+                            <Button
+                                className={cs('btn-categories')}
+                                leftIcon={GridLayouIcon}
+                                rightIcon={ArrowDownIcon}
+                                rouded_sx={true}
+                            >
+                                Categories
+                            </Button>
+                            <CategoriesList />
+                        </div>
+                        <HeaderNavbarMenu/>
                     </div>
                 </div>
             </div>

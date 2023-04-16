@@ -40,9 +40,14 @@ const Button = ({
         }
     });
 
+    const LeftIconComp = leftIcon;
+    const RightIconCompo = rightIcon;
+
     return (
         <button className={btnStyle} {...props}>
+            {leftIcon && <LeftIconComp className="left-icon" />}
             {children}
+            {rightIcon && <RightIconCompo className="right-icon" />}
         </button>
     );
 };
@@ -52,8 +57,8 @@ Button.propTypes = {
     children: PropTypes.node.isRequired,
     disable: PropTypes.bool,
     onClick: PropTypes.func,
-    leftIcon: PropTypes.bool,
-    rightIcon: PropTypes.bool,
+    leftIcon: PropTypes.any,
+    rightIcon: PropTypes.any,
     rouded_sx: PropTypes.bool,
     rouded_full: PropTypes.bool,
     primary: PropTypes.bool,
@@ -62,5 +67,3 @@ Button.propTypes = {
 };
 
 export default Button;
-
-

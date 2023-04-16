@@ -15,6 +15,7 @@ const Wrapper = ({ className = '', children, fullWidth }) => {
 
 Wrapper.propTypes = {
     children: PropTypes.node.isRequired,
+    className : PropTypes.string,
 };
 
 export default Wrapper;

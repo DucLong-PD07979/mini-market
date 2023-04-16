@@ -49,6 +49,7 @@ header {
             margin-right: 18px;
             display: flex;
             align-items: center;
+            color: $while-color;
             height: 100%;
 
             &:hover {
@@ -157,7 +158,8 @@ header {
             width: 100%;
             border-radius: 6px;
             overflow: hidden;
-            z-index: 0;
+            z-index: 99;
+            background-color: $while-color;
         }
 
         .search-result-list .search-result-list--item {
@@ -306,6 +308,128 @@ header {
 
         &:hover {
             text-decoration: none;
+        }
+    }
+}
+
+.header-bottom {
+    @include boxsadow(0px, 4px, 16px, 0, rgba(43, 52, 69, 0.1));
+    .header-bottom-navbar-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: $header-bottom-navbar-height;
+    }
+
+    .header-categories-navbar-wrap {
+        width: fit-content;
+        position: relative;
+
+        .btn-categories {
+            padding: 12px 16px;
+            background-color: $hover-color;
+            color: $gray-color;
+            font-weight: 600;
+            font-size: 1.4rem;
+
+            @include boxsadow(0, 0px, 1px, 0, #8499c960);
+            &:hover {
+                @include boxsadow(0, 1px, 1px, 0, #8499c960);
+            }
+        }
+
+        .categories-list {
+            --categoires-mini-with: 298px;
+            position: absolute;
+            display: flex;
+            flex-direction: column;
+            z-index: 10;
+            top: 130%;
+            min-width: var(--categoires-mini-with);
+            width: 100%;
+            border-radius: 6px;
+            padding: 6px 0;
+            background-color: $while-color;
+            @include boxsadow(0px, 4px, 16px, 0, rgba(43, 52, 69, 0.1));
+
+            &-item-link {
+                display: flex;
+                align-items: center;
+                padding: 10px 16px;
+                color: rgb(125, 135, 156);
+                text-transform: capitalize;
+
+                .item-name {
+                    flex-grow: 1;
+                    margin-left: 10px;
+                }
+
+                &:hover {
+                    background-color: $hover-red-color;
+                    opacity: 0.8;
+                    color: $primary-color;
+                }
+            }
+
+            &-item:hover > .wrapper-list {
+                // display: block;
+                display: none;
+            }
+
+            .wrapper-list {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 100%;
+                z-index: 10;
+                min-width: 368px;
+                min-height: 100%;
+                width: 100%;
+                padding-left: 18px;
+                background-color: transparent;
+                display: none;
+                box-shadow: none;
+            }
+
+            .categories-list-children {
+                background-color: $while-color;
+                border-radius: 6px;
+                min-height: 100%;
+                width: 100%;
+                padding: 6px 0;
+                display: flex;
+                overflow: hidden;
+                @include boxsadow(0px, 4px, 16px, 0, rgba(43, 52, 69, 0.1));
+
+                .categories-list-item-link {
+                    .item-name {
+                        margin-left: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    .header-navbar-menu {
+        color: $text-color;
+
+        .header-menu-list {
+            display: flex;
+            align-items: center;
+        }
+
+        .header-menu-list-item {
+            display: block;
+        }
+
+        .header-menu-list-item-link {
+            display: block;
+            padding: 6px 18px;
+            text-transform: capitalize;
+
+            &:hover {
+                color: $primary-color;
+            }
         }
     }
 }
