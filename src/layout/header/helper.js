@@ -4,6 +4,9 @@ import {
     FashionIcon,
     GiftIcon,
     LightbuldIcon,
+    MetalHealthIcon,
+    MotoBikeIcon,
+    MusicIcon,
     PhoneIcon,
     StoreIcon,
 } from '../../components/svg/IconSvg';
@@ -185,12 +188,12 @@ export const categoriesItem = [
     {
         name: 'Electronics',
         iconLabel: <ComputerIcon />,
-        subItems:subItems,
+        subItems: subItems,
     },
     {
         name: 'Furniture',
         iconLabel: <LightbuldIcon />,
-        subItems:subItems,
+        subItems: subItems,
     },
     {
         name: 'Shoes',
@@ -201,6 +204,39 @@ export const categoriesItem = [
                 subItems: [{ name: 'Subitem 4.1.1' }, { name: 'Subitem 4.1.2' }],
             },
             { name: 'Subitem 4.2' },
+        ],
+    },
+    {
+        name: 'Music',
+        iconLabel: <MusicIcon />,
+        subItems: [
+            {
+                name: 'Subitem 5.1',
+                subItems: [{ name: 'Subitem 5.1.1' }, { name: 'Subitem 5.1.2' }],
+            },
+            { name: 'Subitem 5.2' },
+        ],
+    },
+    {
+        name: 'Motorbike',
+        iconLabel: <MotoBikeIcon />,
+        subItems: [
+            {
+                name: 'Subitem 5.1',
+                subItems: [{ name: 'Subitem 5.1.1' }, { name: 'Subitem 5.1.2' }],
+            },
+            { name: 'Subitem 5.2' },
+        ],
+    },
+    {
+        name: 'Metal-health',
+        iconLabel: <MetalHealthIcon />,
+        subItems: [
+            {
+                name: 'Subitem 5.1',
+                subItems: [{ name: 'Subitem 5.1.1' }, { name: 'Subitem 5.1.2' }],
+            },
+            { name: 'Subitem 5.2' },
         ],
     },
     {
