@@ -54,6 +54,7 @@ const HeaderForm = ({ handleCLoseModal }) => {
                     disable={true}
                     type="submit"
                     onClick={handleSubmit}
+                    className={cs('btn-signup')}
                 >
                     Login
                 </Button>
