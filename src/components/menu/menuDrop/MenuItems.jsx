@@ -4,17 +4,17 @@ import classNames from 'classnames';
 import ImageLoaded from '../../imageLoaded/ImageLoaded';
 import { Link } from 'react-router-dom';
 
-const MenuItems = ({ itemsData = [], toggle, setTitle }) => {
+const MenuItems = ({ itemsData = [], toggle, setTitle, setImage }) => {
     const cs = classNames;
 
-    const handleSetTitle = (to, label) => {
+    const handleSetValueHeaderMenu = (to, label, src) => {
         if (to) {
             return;
         }
-
         setTitle(label);
+        setImage(src);
     };
-    
+
     return (
         <div className={cs('menu-wrap-item', { active: toggle })}>
             <ul className={cs('menu-list')}>
@@ -25,16 +25,10 @@ const MenuItems = ({ itemsData = [], toggle, setTitle }) => {
                             <li
                                 className={cs('menu-list-item')}
                                 key={item + index}
-                                onClick={(e) => handleSetTitle(to, label || item.name)}
+                                onClick={(e) => handleSetValueHeaderMenu(to, label, img)}
                             >
-                                {img && (
-                                    <ImageLoaded src={img} alt={label || item.name} />
-                                )}
-                                {to ? (
-                                    <Link to={to}>{label || item.name}</Link>
-                                ) : (
-                                    label || item.name
-                                )}
+                                {img && <ImageLoaded src={img} alt={label} />}
+                                {to ? <Link to={to}>{label}</Link> : label}
                             </li>
                         );
                     })}
@@ -47,6 +41,7 @@ MenuItems.propTypes = {
     toggle: PropTypes.bool,
     itemsData: PropTypes.array,
     setTitle: PropTypes.func.isRequired,
+    setImage: PropTypes.func
 };
 
 export default MenuItems;
