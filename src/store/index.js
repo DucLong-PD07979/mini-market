@@ -1,6 +1,10 @@
-import {createStore} from 'redux';
+import { createStore } from 'redux';
 import rootReducers from './rootReducer';
 
-const store = createStore(rootReducers);
+import { persistStore } from 'redux-persist';
 
-export default store;
+export const store = createStore(rootReducers);
+export const persistor = persistStore(store);
+// eslint-disable-next-line import/no-anonymous-default-export
+export default { store, persistor };
+

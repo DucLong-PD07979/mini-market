@@ -85,3 +85,4 @@ CardPorduct.propTypes = {
 };
 
 export default memo(CardPorduct);
+

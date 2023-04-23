@@ -1,8 +1,25 @@
-import {combineReducers} from 'redux';
+import { combineReducers } from 'redux';
 import basketReducer from './sliceBasket/basket.reducer';
 
+import { persistReducer } from 'redux-persist';
+import storage from 'redux-persist/lib/storage';
+
+const persistConfig = {
+    key: 'root',
+    storage,
+    whitelist: ['basket'],
+};
+
+const basketPersistConfig = {
+    key: 'basket',
+    storage,
+    blacklist: 'toggle',
+};
+
 const rootReducers = combineReducers({
-    basket: basketReducer,
+    basket: persistReducer(basketPersistConfig, basketReducer),
 });
 
-export default rootReducers;
+const persistedReducer = persistReducer(persistConfig, rootReducers);
+
+export default persistedReducer;
