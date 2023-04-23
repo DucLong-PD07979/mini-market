@@ -1,0 +1,88 @@
+.home-wrapper {
+    .home-banner-hero {
+        padding-bottom: 32px;
+        .home-banner-hero-inner {
+            --with-hero-baner: calc(100% - 298px);
+            height: auto;
+            max-width: var(--with-hero-baner);
+            margin-left: 298px;
+
+            .silder-item-content {
+                display: flex;
+                align-items: center;
+                padding: 20px 20px 0 42px;
+                cursor: unset;
+
+                .title {
+                    font-size: 5.3rem;
+                    color: $text-color;
+                    line-height: 1.2;
+                    margin-bottom: 20px;
+                    margin-top: 0;
+                }
+
+                .description {
+                    font-size: 1.6rem;
+                    color: $blue-color;
+                    margin-bottom: 20px;
+                }
+
+                .silder-item-box {
+                    flex-grow: 1;
+                    .btn-shop-now {
+                        padding-left: 24px;
+                        padding-right: 24px;
+                    }
+                }
+
+                .banner-img {
+                    height: 430px;
+                    width: inherit;
+                }
+            }
+        }
+    }
+
+    .home-main-content-inner {
+        padding: 70px 0;
+    }
+
+    .flash-deals-wrap {
+        .header-wrap {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            line-height: 1.2;
+
+            .header-title,
+            .header-view-all {
+                display: flex;
+                align-items: center;
+            }
+
+            .header-title {
+                font-size: 2.9rem;
+                color: $primary-color;
+                font-weight: 700;
+
+                .header-title-icon {
+                    width: 29px;
+                    height: 29px;
+                    margin-right: 9px;
+                }
+
+                span {
+                    color: $blue-color;
+                }
+            }
+
+            .header-view-all{
+                font-size: 1.6rem;
+                color: $gray-color;
+                cursor: pointer;
+                height: fit-content;
+            }
+        }
+    }
+}

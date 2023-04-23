@@ -1,7 +1,7 @@
 .btn {
     font-size: 1.6rem;
-    width: 100%;
-    padding: 15px 0;
+    width: fit-content;
+    padding: 15px;
     font-weight: 600;
     display: flex;
     align-items: center;
@@ -28,8 +28,8 @@
     }
 
     &.outline {
-        border: 1px solid $gray-second;
-        color: $gray-second;
+        border: 1px solid currentColor;
+        color: currentColor;
     }
 
     &[disable] {

@@ -35,7 +35,6 @@ const Button = ({
     Object.keys(props).forEach((key) => {
         if (disable) {
             if (key.startsWith('on') && typeof props[key] === 'function') {
-                console.log(key);
                 delete props[key];
             }
         }

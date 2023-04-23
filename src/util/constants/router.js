@@ -4,3 +4,6 @@ export const SEARCH = '/search/:param';
 export const PROFILE = '/profile';
 export const REGISTER = '/register';
 export const LOGIN = '/login';
+export const CHECKOUT = '/checkout';
+export const CART = '/cart';
+export const PRODUCT = '/product/';

@@ -10,6 +10,11 @@
         align-items: center;
         height: 100%;
 
+        img {
+            width: 36px;
+            height: 18px;
+        }
+
         .menu-title {
             font-size: 1.4rem;
             text-transform: capitalize;
@@ -41,6 +46,7 @@
 
         img {
             margin-right: 8px;
+            width: 30px;
         }
     }
 

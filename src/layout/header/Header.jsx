@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import classNames from 'classnames';
 import { contactItems, traslateData, currencyData } from './helper';
 import MenuDrop from '../../components/menu/menuDrop/MenuDrop';
@@ -20,11 +20,22 @@ import HeaderForm from './components/HeaderForm';
 import Button from '../../components/button/Button';
 import CategoriesList from './components/CategoriesList';
 import HeaderNavbarMenu from './components/HeaderNavbarMenu';
+import { BasketRepresent } from '../../components/basket';
+import { useDispatch, useSelector } from 'react-redux';
+import { basketToggle, quanityProduct } from '../../store/sliceBasket/basket.select';
+import { basket_toggle } from '../../store/sliceBasket/basket.action';
 
 const Header = (props) => {
     const cs = classNames;
 
     const { isShow, handleTogleModal, handleCLoseModal } = useModal();
+    const toggleBasket = useSelector(basketToggle);
+    const quanityProductAdd = useSelector(quanityProduct);
+    const dispatch = useDispatch();
+
+    const handleToggleBasket = () => {
+        dispatch(basket_toggle(!toggleBasket));
+    };
 
     return (
         <header>
@@ -80,9 +91,13 @@ const Header = (props) => {
                             <div className="avatar-user" onClick={handleTogleModal}>
                                 <UserIcon />
                             </div>
-                            <div className="header-basket">
+                            <div className="header-basket" onClick={handleToggleBasket}>
                                 <CartIcon />
-                                <span className="header-count-quanity">1</span>
+                                {quanityProductAdd > 0 && (
+                                    <span className="header-count-quanity">
+                                        {quanityProductAdd}
+                                    </span>
+                                )}
                             </div>
                             {isShow && (
                                 <PorTalModal>
@@ -105,10 +120,15 @@ const Header = (props) => {
                             </Button>
                             <CategoriesList />
                         </div>
-                        <HeaderNavbarMenu/>
+                        <HeaderNavbarMenu />
                     </div>
                 </div>
             </div>
+            {toggleBasket && (
+                <PorTalModal wrapperElementID="navbarSide">
+                    <BasketRepresent />
+                </PorTalModal>
+            )}
         </header>
     );
 };

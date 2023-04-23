@@ -3,11 +3,11 @@ $font-family: 'Open Sans', sans-serif;
 // color setting
 $primary-color: #e94560;
 $blue-color: #0f3460;
-$text-color: rgb(43, 52, 69);
+$text-color: #2b3445;
 $yellow-color: #ffcd4e;
 $while-color: #fff;
 $gray-color: rgb(125, 135, 156);
-$gray-second: rgb(55, 63, 80);
+$gray-second: #515b73;
 
 $login-facebook-color: rgb(59, 89, 152);
 $login-google-color: rgb(66, 133, 244);
@@ -15,8 +15,12 @@ $login-google-color: rgb(66, 133, 244);
 $hover-color: rgb(242, 243, 247);
 $hover-red-color: #ffe3e8;
 $border-color: rgb(218, 225, 231);
+$border-red-color: rgb(255, 225, 230);
+
 
 $modalColorOverlay: rgba(6, 6, 6, 0.415);
+
+$mainContentColorBG: #f6f9fc;
 
 // height - width seting
 $header-top-height: 40px;
@@ -24,3 +28,8 @@ $header-bottom-with-logo: 80px;
 $header-search-height: 48px;
 $header-search-width: 770px;
 $header-bottom-navbar-height: 60px;
+$width-basket-wrap: 400px;
+
+// border-radius
+
+$border-radius-global: 6px;

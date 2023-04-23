@@ -7,10 +7,16 @@
 
 @import './base/globalStyle';
 
-@import './layout/header';
-
 @import './components/MenuDrop';
 @import './components/Wrapper';
 @import './components/Modal';
 @import './components/FormField';
-@import './components/Button'
+@import './components/Button';
+@import './components/Card';
+@import './components/Basket';
+
+@import './layout/header';
+
+@import './page/home';
+
+@import './services/swiper';

@@ -285,3 +285,113 @@ export const MotoBikeIcon = ({ className = '', width = '20', height = '20' }) =>
         </div>
     );
 };
+
+export const ArrowLeftIcon = ({ className = '', width = '20', height = '20' }) => {
+    return (
+        <div className={`icon-style ${className}`}>
+            <Icon width={width} height={height}>
+                <path
+                    d="M10.8284 12.0007L15.7782 16.9504L14.364 18.3646L8 12.0007L14.364 5.63672L15.7782 7.05093L10.8284 12.0007Z"
+                    fill="currentColor"
+                ></path>
+            </Icon>
+        </div>
+    );
+};
+
+export const FlashIcon = ({ className = '', width = '20', height = '20' }) => {
+    return (
+        <div className={`icon-style ${className}`}>
+            <Icon width={width} height={height}>
+                <path d="M13 10H20L11 23V14H4L13 1V10Z" fill="currentColor"></path>
+            </Icon>
+        </div>
+    );
+};
+
+export const ArrowRightBoldIcon = ({ className = '', width = '20', height = '20' }) => {
+    return (
+        <div className={`icon-style ${className}`}>
+            <Icon width={width} height={height}>
+                <path d="M16 12L10 18V6L16 12Z" fill="currentColor"></path>
+            </Icon>
+        </div>
+    );
+};
+
+export const HeartIcon = ({ className = '', width = '20', height = '20' }) => {
+    return (
+        <div className={`icon-style ${className}`}>
+            <Icon width={width} height={height}>
+                <path
+                    d="M12.001 4.52853C14.35 2.42 17.98 2.49 20.2426 4.75736C22.5053 7.02472 22.583 10.637 20.4786 12.993L11.9999 21.485L3.52138 12.993C1.41705 10.637 1.49571 7.01901 3.75736 4.75736C6.02157 2.49315 9.64519 2.41687 12.001 4.52853ZM18.827 6.1701C17.3279 4.66794 14.9076 4.60701 13.337 6.01687L12.0019 7.21524L10.6661 6.01781C9.09098 4.60597 6.67506 4.66808 5.17157 6.17157C3.68183 7.66131 3.60704 10.0473 4.97993 11.6232L11.9999 18.6543L19.0201 11.6232C20.3935 10.0467 20.319 7.66525 18.827 6.1701Z"
+                    fill="currentColor"
+                ></path>
+            </Icon>
+        </div>
+    );
+};
+
+export const StarIconLine = ({ className = '', width = '20', height = '20' }) => {
+    return (
+        <div className={`icon-style ${className}`}>
+            <Icon width={width} height={height}>
+                <path
+                    d="M12.0006 18.26L4.94715 22.2082L6.52248 14.2799L0.587891 8.7918L8.61493 7.84006L12.0006 0.5L15.3862 7.84006L23.4132 8.7918L17.4787 14.2799L19.054 22.2082L12.0006 18.26ZM12.0006 15.968L16.2473 18.3451L15.2988 13.5717L18.8719 10.2674L14.039 9.69434L12.0006 5.27502L9.96214 9.69434L5.12921 10.2674L8.70231 13.5717L7.75383 18.3451L12.0006 15.968Z"
+                    fill="currentColor"
+                ></path>
+            </Icon>
+        </div>
+    );
+};
+
+export const StarIconFill = ({ className = '', width = '20', height = '20' }) => {
+    return (
+        <div className={`icon-style ${className}`}>
+            <Icon width={width} height={height}>
+                <path
+                    d="M12.0006 18.26L4.94715 22.2082L6.52248 14.2799L0.587891 8.7918L8.61493 7.84006L12.0006 0.5L15.3862 7.84006L23.4132 8.7918L17.4787 14.2799L19.054 22.2082L12.0006 18.26Z"
+                    fill="currentColor"
+                ></path>
+            </Icon>
+        </div>
+    );
+};
+
+export const AddIcon = ({ className = '', width = '20', height = '20' }) => {
+    return (
+        <div className={`icon-style ${className}`}>
+            <Icon width={width} height={height}>
+                <path
+                    d="M11 11V5H13V11H19V13H13V19H11V13H5V11H11Z"
+                    fill="currentColor"
+                ></path>
+            </Icon>
+        </div>
+    );
+};
+
+
+export const SubtractIcon = ({ className = '', width = '20', height = '20' }) => {
+    return (
+        <div className={`icon-style ${className}`}>
+            <Icon width={width} height={height}>
+                <path d="M19 11H5V13H19V11Z" fill="currentColor"></path>;
+            </Icon>
+        </div>
+    );
+};
+
+export const EyeFillIcon = ({ className = '', width = '20', height = '20' }) => {
+    return (
+        <div className={`icon-style ${className}`}>
+            <Icon width={width} height={height}>
+                <path
+                    d="M1.18164 12C2.12215 6.87976 6.60812 3 12.0003 3C17.3924 3 21.8784 6.87976 22.8189 12C21.8784 17.1202 17.3924 21 12.0003 21C6.60812 21 2.12215 17.1202 1.18164 12ZM12.0003 17C14.7617 17 17.0003 14.7614 17.0003 12C17.0003 9.23858 14.7617 7 12.0003 7C9.23884 7 7.00026 9.23858 7.00026 12C7.00026 14.7614 9.23884 17 12.0003 17ZM12.0003 15C10.3434 15 9.00026 13.6569 9.00026 12C9.00026 10.3431 10.3434 9 12.0003 9C13.6571 9 15.0003 10.3431 15.0003 12C15.0003 13.6569 13.6571 15 12.0003 15Z"
+                    fill="currentColor"
+                ></path>
+            </Icon>
+        </div>
+    );
+};
+

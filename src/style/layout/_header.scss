@@ -266,6 +266,7 @@ header {
         font-weight: 600;
         font-size: 1.4rem;
         color: $while-color;
+        width: 100%;
 
         span {
             margin-left: 6px;
@@ -344,7 +345,7 @@ header {
             display: flex;
             flex-direction: column;
             z-index: 10;
-            top: 130%;
+            top: 125%;
             min-width: var(--categoires-mini-with);
             width: 100%;
             border-radius: 6px;

@@ -1,0 +1,166 @@
+.basket-wrap {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    .basket-content {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #fff;
+        width: $width-basket-wrap;
+        max-width: 100%;
+        --global-padding: 22px;
+        display: flex;
+        flex-direction: column;
+        @include transition(all, 0.2s, ease-in);
+    }
+
+    .basket-header {
+        --basket-header-height: 80px;
+        display: flex;
+        align-items: center;
+        height: var(--basket-header-height);
+        padding: 0 var(--global-padding);
+        border-bottom: 1px solid $border-color;
+
+        .basket-icon {
+            width: 30px;
+            height: 30px;
+            color: $text-color;
+            margin-right: 12px;
+        }
+
+        & > span {
+            font-size: 1.7rem;
+            color: $text-color;
+            font-weight: 600;
+        }
+    }
+
+    .basket-body {
+        overflow-y: auto;
+        margin-bottom: 115px;
+    }
+
+    .basket-footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        z-index: 10;
+        width: 100%;
+        padding: var(--global-padding);
+        background-color: $while-color;
+    }
+
+    .btn-checkout,
+    .btn-view-cart {
+        width: 100%;
+    }
+
+    .btn-view-cart {
+        margin-top: 10px;
+        color: $primary-color;
+        background-color: #fff;
+
+        &:hover {
+            background-color: $primary-color;
+            color: $while-color;
+        }
+    }
+
+    .basket-item {
+        display: flex;
+        align-items: center;
+        border-bottom: 1px solid $border-color;
+        padding: var(--global-padding);
+
+        .basket-control {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            .btn-add,
+            .btn-remove {
+                padding: 6px;
+                background-color: $while-color;
+                border: 1px solid $border-red-color;
+                color: $primary-color;
+                @include transition(all, 0.3s, ease-out);
+
+                &:hover {
+                    background-color: $primary-color;
+                    color: $while-color;
+                }
+            }
+
+            & > .quanity {
+                margin: 2px 0;
+                font-size: 1.6rem;
+                font-weight: 600;
+                color: $text-color;
+            }
+        }
+
+        .product-link-img {
+            display: block;
+            font-weight: 600;
+            overflow: hidden;
+            position: relative;
+            text-align: center;
+            min-width: 76px;
+            font-size: 38px;
+            margin-left: 12px;
+            margin-right: 12px;
+            width: 76px;
+            height: 76px;
+            border-radius: 3px;
+        }
+
+        .details-product {
+            display: flex;
+            flex-direction: column;
+
+            .basket-title {
+                // white-space: nowrap;
+                // overflow: hidden;
+                // text-overflow: ellipsis;
+                line-height: 1.2;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                overflow: hidden;
+                -webkit-line-clamp: 2;
+                width: 190px; /* Thiết lập chiều rộng */
+            }
+
+            .money-with-quanity {
+                font-size: 1.1rem;
+                color: $gray-color;
+                margin: 5px 0 3px;
+            }
+
+            .total-money {
+                color: $primary-color;
+                font-weight: 600;
+            }
+        }
+
+        .btn-remove-item {
+            background-color: transparent;
+            padding: 6px;
+            margin-left: 10px;
+            color: $gray-color;
+
+            &:hover {
+                background-color: $hover-color;
+            }
+        }
+    }
+
+    .basket-overlay {
+        background-color: $modalColorOverlay;
+        width: 100%;
+        height: 100%;
+    }
+}
