@@ -7,12 +7,21 @@ import { Link } from 'react-router-dom';
 const MenuItems = ({ itemsData = [], toggle, setTitle, setImage }) => {
     const cs = classNames;
 
-    const handleSetValueHeaderMenu = (to, label, src) => {
+    const handleSetValueHeaderMenu = (to, label, src, name) => {
         if (to) {
             return;
         }
-        setTitle(label);
-        setImage(src);
+
+        if (name) {
+            setTitle(name);
+        }
+
+        if (label) {
+            setTitle(label);
+        }
+        if (src) {
+            setImage(src);
+        }
     };
 
     return (
@@ -20,15 +29,18 @@ const MenuItems = ({ itemsData = [], toggle, setTitle, setImage }) => {
             <ul className={cs('menu-list')}>
                 {itemsData.length > 0 &&
                     itemsData.map((item, index) => {
-                        const { to, label, img } = item;
+                        const { to, label, img, name } = item;
                         return (
                             <li
                                 className={cs('menu-list-item')}
                                 key={item + index}
-                                onClick={(e) => handleSetValueHeaderMenu(to, label, img)}
+                                onClick={(e) =>
+                                    handleSetValueHeaderMenu(to, label, img, name)
+                                }
                             >
                                 {img && <ImageLoaded src={img} alt={label} />}
                                 {to ? <Link to={to}>{label}</Link> : label}
+                                {!to && name}
                             </li>
                         );
                     })}
@@ -41,7 +53,7 @@ MenuItems.propTypes = {
     toggle: PropTypes.bool,
     itemsData: PropTypes.array,
     setTitle: PropTypes.func.isRequired,
-    setImage: PropTypes.func
+    setImage: PropTypes.func,
 };
 
 export default MenuItems;
