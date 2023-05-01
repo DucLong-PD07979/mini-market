@@ -11,7 +11,7 @@ const HomeHeaderItem = ({ IconLabel, title, ...props }) => {
     return (
         <div className={cs('header-wrap')}>
             <div className={cs('header-title')}>
-                <IconLabel className={cs('header-title-icon')} />
+                {IconLabel && <IconLabel className={cs('header-title-icon')} />}
                 <span>{title}</span>
             </div>
             <Link to={pathPage.HOME} className={cs('header-view-all')}>

@@ -3,7 +3,7 @@
     box-shadow: $x $y $blur $spread $color;
 }
 
-@mixin transition($property: 'all',$duration,$typeRun: 'linear') {
+@mixin transition($property: 'all', $duration, $typeRun: 'linear') {
     -webkit-transition: $property $duration $typeRun;
     -moz-transition: $property $duration $typeRun;
     -ms-transition: $property $duration $typeRun;
@@ -13,20 +13,27 @@
 }
 
 @mixin placeholder-color($color) {
-  &::-webkit-input-placeholder {
-    color: $color;
-    @content;
-  }
-  &::-moz-placeholder {
-    color: $color;
-    @content;
-  }
-  &:-ms-input-placeholder {
-    color: $color;
-    @content;
-  }
-  &:-moz-placeholder {
-    color: $color;
-    @content;
-  }
+    &::-webkit-input-placeholder {
+        color: $color;
+        @content;
+    }
+    &::-moz-placeholder {
+        color: $color;
+        @content;
+    }
+    &:-ms-input-placeholder {
+        color: $color;
+        @content;
+    }
+    &:-moz-placeholder {
+        color: $color;
+        @content;
+    }
+}
+
+@mixin reponsive($breakPoint) {
+    @media only screen and (max-width: $breakPoint) {
+        @content;
+    }
+   
 }

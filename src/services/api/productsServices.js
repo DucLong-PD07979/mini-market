@@ -31,4 +31,32 @@ const fetchFlashProducts = () => {
     }
 };
 
-export { fetchCategories, fetchSearchProducts, fetchFlashProducts };
+const fetchCarsProducts = () => {
+    const randomNumber = 0;
+    const itemsLimit = randomNumber + 9;
+    try {
+        let res = get(
+            `products/?categoryId=1&offset=${randomNumber}&limit=${itemsLimit}`,
+        );
+        return res;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+const fetchRecommentForYou = () => {
+    try {
+        let res = get(`products/?categoryId=1&offset=${0}&limit=${12}`);
+        return res;
+    } catch (error) {
+        console.log(error);
+    }
+};
+
+export {
+    fetchCategories,
+    fetchSearchProducts,
+    fetchFlashProducts,
+    fetchCarsProducts,
+    fetchRecommentForYou,
+};

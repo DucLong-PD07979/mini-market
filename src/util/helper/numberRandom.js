@@ -4,3 +4,4 @@ export const numberRandom = (min, max) => {
     }
     return Math.random() * (max - min) + min;
 };
+
