@@ -12,6 +12,10 @@ const MenuDrop = ({ icon, title, itemsData, src = false, ...props }) => {
         setToggle(!toggle);
     };
 
+    const handleFocusItem = () => {
+        setToggle(false);
+    };
+
     return (
         <div className="menu-drop-wrap">
             <HeaderMenu
@@ -25,6 +29,7 @@ const MenuDrop = ({ icon, title, itemsData, src = false, ...props }) => {
                 toggle={toggle}
                 setTitle={setTitleName}
                 setImage={setImage}
+                handleFocus={handleFocusItem}
             />
         </div>
     );

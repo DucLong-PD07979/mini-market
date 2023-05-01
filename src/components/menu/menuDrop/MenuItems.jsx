@@ -4,7 +4,14 @@ import classNames from 'classnames';
 import ImageLoaded from '../../imageLoaded/ImageLoaded';
 import { Link } from 'react-router-dom';
 
-const MenuItems = ({ itemsData = [], toggle, setTitle, setImage }) => {
+const MenuItems = ({
+    itemsData = [],
+    toggle,
+    setTitle,
+    setImage,
+    handleFocus,
+    ...props
+}) => {
     const cs = classNames;
 
     const handleSetValueHeaderMenu = (to, label, src, name) => {
@@ -22,6 +29,7 @@ const MenuItems = ({ itemsData = [], toggle, setTitle, setImage }) => {
         if (src) {
             setImage(src);
         }
+        handleFocus();
     };
 
     return (
@@ -54,6 +62,7 @@ MenuItems.propTypes = {
     itemsData: PropTypes.array,
     setTitle: PropTypes.func.isRequired,
     setImage: PropTypes.func,
+    handleFocus: PropTypes.func,
 };
 
 export default MenuItems;
