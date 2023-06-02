@@ -22,7 +22,7 @@
         display: flex;
         align-items: center;
         height: var(--basket-header-height);
-        padding: 0 var(--global-padding);
+        padding: var(--global-padding);
         border-bottom: 1px solid $border-color;
 
         .basket-icon {

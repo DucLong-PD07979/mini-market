@@ -342,7 +342,7 @@ header {
         .categories-list {
             --categoires-mini-with: 298px;
             position: absolute;
-            display: flex;
+            display: none; // flex
             flex-direction: column;
             z-index: 10;
             top: 125%;

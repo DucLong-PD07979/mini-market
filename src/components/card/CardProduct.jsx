@@ -11,12 +11,20 @@ import { memo } from 'react';
 import { images as imageAssets } from '../../assets/images';
 import * as pathPage from '../../util/constants/router';
 import { converTitleToPath } from '../../util/helper/ConverTitleToPath';
+import { useDispatch } from 'react-redux';
+import { get_id_single_product } from '../../store/sliceBasket/basket.action';
+import StarRating from '../starRating/StarRating';
 
 const CardPorduct = ({ id, images, title, price }) => {
     const cs = classNames;
 
     const percentOffer = numberRandom(20, 35);
     const oldPrice = (price * percentOffer) / 100 + price;
+
+    const disPatch = useDispatch();
+    const handleGetIdOfProduct = (id) => {
+        disPatch(get_id_single_product(id));
+    };
 
     return (
         <div className={cs('card-single')}>
@@ -35,6 +43,7 @@ const CardPorduct = ({ id, images, title, price }) => {
                 <Link
                     to={pathPage.PRODUCT + converTitleToPath(title)}
                     className={cs('link-product')}
+                    onClick={(e) => handleGetIdOfProduct(id)}
                 >
                     <ImageLoaded
                         className={cs('product-image')}
@@ -49,16 +58,11 @@ const CardPorduct = ({ id, images, title, price }) => {
                     <Link
                         to={pathPage.PRODUCT + converTitleToPath(title)}
                         className={cs('link-product')}
+                        onClick={(e) => handleGetIdOfProduct(id)}
                     >
                         {title}
                     </Link>
-                    <div className={cs('star-wrap')}>
-                        <StarIconFill className={cs('star-icon')} />
-                        <StarIconFill className={cs('star-icon')} />
-                        <StarIconFill className={cs('star-icon')} />
-                        <StarIconFill className={cs('star-icon')} />
-                        <StarIconLine className={cs('star-icon')} />
-                    </div>
+                    <StarRating />
                     <p className={cs('price')}>
                         {formatPrice(price)}
                         <span className={cs('price-old')}>
@@ -85,4 +89,3 @@ CardPorduct.propTypes = {
 };
 
 export default memo(CardPorduct);
-

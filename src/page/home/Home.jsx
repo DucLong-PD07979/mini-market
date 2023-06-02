@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import { CarouselRepesent, CarouseBullet } from '../../components/carousel';
 import { Pagination, Autoplay, Navigation } from 'swiper';

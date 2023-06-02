@@ -100,8 +100,8 @@ export const SearchProducts = [
 // header form login schema
 export const schema = yup
     .object({
-        email: yup.string().required('Email is requied').email('Email is invalid'),
-        password: yup.string().required('Password is requied').min(6).max(32),
+        email: yup.string().required('Email is required').email('Email is invalid'),
+        password: yup.string().required('Password is required').min(6).max(32),
     })
     .required();
 
