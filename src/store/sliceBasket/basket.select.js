@@ -20,3 +20,5 @@ export const totalMoneySelect = createSelector(basketSelector, ({ basket }) => {
         return (total += totalItem);
     }, 0);
 });
+
+

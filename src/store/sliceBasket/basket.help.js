@@ -48,3 +48,11 @@ export const removeItemProduct = (basket, payload) => {
         });
     }
 };
+
+export const getIdSingleProduct = (basket, id) => {
+    const idProduct = id;
+    let exitProduct = basket.find((item) => {
+        return item.id === idProduct;
+    });
+    return exitProduct ? idProduct : 0;
+};

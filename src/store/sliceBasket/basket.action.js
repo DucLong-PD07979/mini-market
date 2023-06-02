@@ -27,3 +27,10 @@ export const basket_remove_item_product = (payload) => {
         payload,
     };
 };
+
+export const get_id_single_product = (payload) => {
+    return {
+        type: type.GET_ID_SINGLE_PRODUCT,
+        payload,
+    };
+};

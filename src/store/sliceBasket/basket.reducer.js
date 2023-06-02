@@ -1,9 +1,14 @@
 import * as type from './basket.type';
-import { addProduct, removeItemProduct, removeProduct } from './basket.help';
+import {
+    addProduct,
+    removeItemProduct,
+    removeProduct,
+} from './basket.help';
 
 const initialSate = {
     basket: [],
     toggle: false,
+    idSingleProduct: null,
 };
 
 const basketReducer = (state = initialSate, action) => {
@@ -27,6 +32,12 @@ const basketReducer = (state = initialSate, action) => {
             return {
                 ...state,
                 basket: removeItemProduct(state.basket, action.payload),
+            };
+        case type.GET_ID_SINGLE_PRODUCT:
+            const id = action.payload;
+            return {
+                ...state,
+                idSingleProduct: id,
             };
         default:
             return state;

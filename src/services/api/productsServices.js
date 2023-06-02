@@ -2,7 +2,7 @@ import { get } from '../../util/helper/api';
 
 const fetchCategories = () => {
     try {
-        let res = get('categories', {});
+        let res = get('categories');
         return res;
     } catch (error) {
         console.log(error);
@@ -53,10 +53,34 @@ const fetchRecommentForYou = () => {
     }
 };
 
+const fetchSingleProduct = (id = 0) => {
+    return function () {
+        try {
+            let res = get(`products/${id}`);
+            return res;
+        } catch (error) {
+            console.log(error);
+        }
+    };
+};
+
+const fetchProductRealted = (idCategories = 1) => {
+    return function () {
+        try {
+            let res = get(`products/?categoryId=${idCategories}&offset=${0}&limit=${4}`);
+            return res;
+        } catch (error) {
+            console.log(error);
+        }
+    };
+};
+
 export {
     fetchCategories,
     fetchSearchProducts,
     fetchFlashProducts,
     fetchCarsProducts,
     fetchRecommentForYou,
+    fetchSingleProduct,
+    fetchProductRealted,
 };
