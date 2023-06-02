@@ -1,0 +1,17 @@
+.star-wrap {
+    display: flex;
+    gap: 4px;
+    color: $yellow-color;
+    margin: 3px 0 4px 0;
+
+    .icon-style {
+        width: 18px;
+        height: 18px;
+        font-size: 1.4rem;
+    }
+}
+.star-wrap.modelSelect {
+    .icon-style {
+        cursor: pointer;
+    }
+}

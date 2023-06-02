@@ -1,0 +1,16 @@
+.avatar-item {
+    max-width: 54px;
+    max-height: 54px;
+
+    &.rouded_sx {
+        border-radius: 8px;
+    }
+
+    &.rouded_full{
+        border-radius: 999px;
+    }
+
+    img {
+        border-radius: inherit;
+    }
+}

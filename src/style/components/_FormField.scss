@@ -4,7 +4,8 @@
     position: relative;
 }
 
-.form-group input {
+.form-group input,
+.form-group textarea {
     border: 1px solid $border-color;
     border-radius: 6px;
     padding: 12px;
@@ -14,8 +15,15 @@
     margin: 6px 0 16px 0;
 }
 
-.form-group:focus-within input {
+.form-group textarea {
+    resize: vertical;
+    margin: 4px 0 0;
+}
+
+.form-group:focus-within input,
+.form-group:focus-within textarea  {
     border: 1px solid $text-color;
+    outline: none;
 }
 
 .form-group label {
@@ -55,4 +63,5 @@
 .form-group .error-mes {
     color: $primary-color;
     margin-top: 0;
+    opacity: 0.9;
 }

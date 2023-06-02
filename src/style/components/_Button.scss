@@ -8,6 +8,8 @@
     justify-content: center;
     cursor: pointer;
     user-select: none;
+    font-family: inherit;
+    transition: all 0.2s linear;
 
     &.text {
         background-color: $while-color;
@@ -29,7 +31,13 @@
 
     &.outline {
         border: 1px solid currentColor;
-        color: currentColor;
+        color: $primary-color;
+        background-color: transparent;
+
+        &:hover {
+            background-color: $primary-color;
+            color: $while-color;
+        }
     }
 
     &[disable] {
