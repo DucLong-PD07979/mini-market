@@ -2,29 +2,32 @@ import React, { useEffect, useState } from 'react';
 import classNames from 'classnames';
 import { SearchIcon } from '../../../components/svg/IconSvg';
 import MenuDrop from '../../../components/menu/menuDrop/MenuDrop';
-import { useFetch } from '../../../hooks';
-import { fetchCategories } from '../../../services/api/productsServices';
+import { useFetchWithFirebase } from '../../../hooks';
 import Wrapper from '../../../components/wrapper/Wrapper';
 import useDebonce from '../../../hooks/useDebonce';
 import { fetchSearchProducts } from '../../../services/api/productsServices';
+import firebaseServices from '../../../services/firebase/firebase.services';
 
 const Search = (props) => {
     const cs = classNames;
-    const [categoriesData, setCategoriesData] = useState([]);
-    const { data: dataCategories, loading } = useFetch([], fetchCategories);
     const [searchValue, setSearchValue] = useState('');
     const [valueSearchDelay] = useDebonce(searchValue, 600);
     const [resultSearch, setResultSearch] = useState([]);
+    const [typeOfCategories, setTypeOfCategories] = useState('');
 
-    useEffect(() => {
-        let categoriesMain = dataCategories.slice(0, 6); // lấy các categories chính
-        setCategoriesData(categoriesMain);
-    }, [dataCategories]);
+    const { getCategories, getSearchProducts } = firebaseServices.read_Data_To_Firebase;
+    const { data: dataCategories, loading } = useFetchWithFirebase([], getCategories);
 
     let handleSearchChange = (e) => {
-        let searchValue = e.target.value
+        let searchValue = e.target.value;
         setSearchValue(searchValue);
     };
+
+    // xử lí sau
+    // const { data: dataSearch } = useFetchWithFirebase(
+    //     [valueSearchDelay],
+    //     getSearchProducts(typeOfCategories, valueSearchDelay),
+    // );
 
     useEffect(() => {
         const fecthData = async () => {
@@ -50,22 +53,24 @@ const Search = (props) => {
                 <MenuDrop
                     title="All catergories"
                     icon={true}
-                    itemsData={categoriesData}
+                    itemsData={dataCategories}
                     loading={loading}
+                    getTitle={setTypeOfCategories}
                 ></MenuDrop>
             </div>
             <Wrapper
                 className={valueSearchDelay ? `search-result-active` : 'search-result'}
             >
                 <ul className="search-result-list">
-                    {resultSearch.length > 0 && resultSearch.map((result) => (
-                        <li
-                            className="search-result-list--item"
-                            key={result.title + result.id}
-                        >
-                            {result.title}
-                        </li>
-                    ))}
+                    {resultSearch.length > 0 &&
+                        resultSearch.map((result) => (
+                            <li
+                                className="search-result-list--item"
+                                key={result.title + result.id}
+                            >
+                                {result.title}
+                            </li>
+                        ))}
                 </ul>
             </Wrapper>
         </div>

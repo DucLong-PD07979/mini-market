@@ -24,6 +24,7 @@ import { BasketRepresent } from '../../components/basket';
 import { useDispatch, useSelector } from 'react-redux';
 import { basketToggle, quanityProduct } from '../../store/sliceBasket/basket.select';
 import { basket_toggle } from '../../store/sliceBasket/basket.action';
+import { useMatch } from 'react-router-dom';
 
 const Header = (props) => {
     const cs = classNames;
@@ -35,6 +36,13 @@ const Header = (props) => {
 
     const handleToggleBasket = () => {
         dispatch(basket_toggle(!toggleBasket));
+    };
+
+    const matchHome = useMatch('/');
+    const [isOpenCategoriesList, setIsOpenCategoriesList] = useState(false);
+
+    const handleToggleCategoriesList = (e) => {
+        setIsOpenCategoriesList(!isOpenCategoriesList);
     };
 
     return (
@@ -115,10 +123,19 @@ const Header = (props) => {
                                 leftIcon={GridLayouIcon}
                                 rightIcon={ArrowDownIcon}
                                 rouded_sx={true}
+                                onClick={(e) => {
+                                    handleToggleCategoriesList(e);
+                                }}
                             >
                                 Categories
                             </Button>
-                            <CategoriesList />
+
+                            <CategoriesList
+                                className={cs('categories-list', {
+                                    'categories-list--is-hidden':
+                                        !matchHome && !isOpenCategoriesList,
+                                })}
+                            />
                         </div>
                         <HeaderNavbarMenu />
                     </div>

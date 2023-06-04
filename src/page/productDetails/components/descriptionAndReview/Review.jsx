@@ -38,7 +38,11 @@ const Review = ({ dataComments }) => {
                         return (
                             <div className="user-comment-details" key={index}>
                                 <div className="user-infor">
-                                    <Avatar image={user.image} rouded_full={true} />
+                                    <Avatar
+                                        image={user.image}
+                                        rouded_full={true}
+                                        alt={user.authorName + 'avtar'}
+                                    />
                                     <div className="name-and-rate">
                                         <h4>{user.authorName}</h4>
                                         <div className="info-rate-box">

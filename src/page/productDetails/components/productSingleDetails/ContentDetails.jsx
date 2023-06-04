@@ -20,11 +20,11 @@ const ContentDetails = ({ data: { title, price, images, id } }) => {
     });
 
     const handleAddProductToBasket = () => {
-        dispatch(basket_add_product({ title, price, id, images }));
+        dispatch(basket_add_product({ title, price, id, images: images[0] }));
     };
 
     const handleRemoveProduct = () => {
-        dispatch(basket_remove_product({ title, price, id, images }));
+        dispatch(basket_remove_product({ title, price, id, images: images[0] }));
     };
 
     return (

@@ -14,17 +14,13 @@ import {
     MedalFillIcon,
     StarIconFill,
 } from '../../components/svg/IconSvg';
-import useFetch from '../../hooks/useFetch';
-import {
-    fetchCarsProducts,
-    fetchFlashProducts,
-    fetchRecommentForYou,
-} from '../../services/api/productsServices';
 import { CardProduct } from '../../components/card';
 import HomeWrapContent from './components/HomeWrapContent';
 import ListBrandRepesent from '../../components/ListBrand/ListBrandRepesent';
 import ImageLoaded from '../../components/imageLoaded/ImageLoaded';
 import { imagesHasLicense } from '../../util/helper/imagesHasLicense';
+import firebaseServices from '../../services/firebase/firebase.services';
+import { useFetchWithFirebase } from '../../hooks';
 
 const Home = (props) => {
     const cs = classNames;
@@ -42,15 +38,20 @@ const Home = (props) => {
         },
         silderFlash: { flashview },
     } = silderDataHome;
-    const { data: flashData } = useFetch([], fetchFlashProducts);
+
     const {
         topRatings: { data: topRatingsData, GetTopRatingsElement },
         featuredBrands: { data: featuredBrandsData, GetFeaturedBarndsElement },
         newArrivals: { data: newArrivalsData, GetNewArrivalsElement },
     } = staticElementHome;
-    const { data: CarsData } = useFetch([], fetchCarsProducts);
     const { listBrandsMobiPhoneData, listBrandCarsData } = staticDataListBrands;
-    const { data: RecommentForYouData } = useFetch([], fetchRecommentForYou);
+
+    const { getProductsFlashDeal, getCarsProduct, getMobiPhonesProduct, getMoreForYou } =
+        firebaseServices.read_Data_To_Firebase;
+    const { data: flashDealData } = useFetchWithFirebase([], getProductsFlashDeal);
+    const { data: CarsData } = useFetchWithFirebase([], getCarsProduct);
+    const { data: MobilePhonesData } = useFetchWithFirebase([], getMobiPhonesProduct);
+    const { data: RecommentForYouData } = useFetchWithFirebase([], getMoreForYou);
 
     return (
         <div className={cs('home-wrapper')}>
@@ -85,7 +86,7 @@ const Home = (props) => {
                                     loop={true}
                                     slidesPerView={4}
                                     scrollbar={{ draggable: true }}
-                                    silderdata={flashData}
+                                    silderdata={flashDealData}
                                     navigation_custom={'true'}
                                     spaceBetween={30}
                                     modules={[Navigation]}
@@ -212,8 +213,8 @@ const Home = (props) => {
                             <div className="col col-xs-12 col-md-8 col-lg-9 col-gap">
                                 <HomeWrapContent title={'Mobile Phones'}>
                                     <div className="row">
-                                        {CarsData.length > 0 &&
-                                            CarsData.map((product) => {
+                                        {MobilePhonesData.length > 0 &&
+                                            MobilePhonesData.map((product) => {
                                                 return (
                                                     <div
                                                         className="col col-xs-12 col-sm-6 col-md-4 col-lg-4 col-gap"

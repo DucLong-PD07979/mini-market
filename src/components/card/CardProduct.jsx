@@ -82,7 +82,7 @@ const CardPorduct = ({ id, images, title, price }) => {
 };
 
 CardPorduct.propTypes = {
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     images: PropTypes.array.isRequired,
     title: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-const useFetch = (dependencyList = [], promise,) => {
+const useFetch = (dependencyList = [], promise) => {
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState('idle');
     const [status, setStatus] = useState(null);
@@ -11,7 +11,7 @@ const useFetch = (dependencyList = [], promise,) => {
             setLoading(true);
             setStatus('pending');
             const res = await promise();
-            setData(res.data);
+            setData(res?.data);
             setStatus('success');
         } catch (err) {
             setError(err);
@@ -23,7 +23,7 @@ const useFetch = (dependencyList = [], promise,) => {
 
     useEffect(() => {
         fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, dependencyList);
 
     return {

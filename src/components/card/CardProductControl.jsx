@@ -54,7 +54,7 @@ const CardProductControl = ({ ...props }) => {
 };
 
 CardProductControl.propTypes = {
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     images: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,

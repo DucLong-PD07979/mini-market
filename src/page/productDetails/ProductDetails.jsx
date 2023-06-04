@@ -1,11 +1,6 @@
 import React from 'react';
 import { ProductSingleDetailsRepesent } from './components/productSingleDetails';
 import { useSelector } from 'react-redux';
-import useFetch from '../../hooks/useFetch';
-import {
-    fetchProductRealted,
-    fetchSingleProduct,
-} from '../../services/api/productsServices';
 import DescriptionAndReview from './components/descriptionAndReview/DescriptionAndReview';
 import ImageLoaded from '../../components/imageLoaded/ImageLoaded';
 import { productsBuyTogetherData, shopData } from './components/helper';
@@ -15,15 +10,23 @@ import { formatPrice } from '../../util/helper/formatPrice';
 import { numberRandom } from '../../util/helper/numberRandom';
 import Avatar from '../../components/avatar/Avatar';
 import { CardProduct } from '../../components/card';
+import useFetchWithFirebase from '../../hooks/useFetchWithFirebase';
+import firebaseServices from '../../services/firebase/firebase.services';
 
 const ProductDetails = (props) => {
     const idOfProduct = useSelector((state) => state.basket.idSingleProduct);
-    const { data: singleProductData, loading } = useFetch(
-        [],
-        fetchSingleProduct(idOfProduct),
+    const { getSingleDetailsProduct, getProducstRealted } =
+        firebaseServices.read_Data_To_Firebase;
+
+    const { data: singleProductData, loading } = useFetchWithFirebase(
+        [idOfProduct],
+        getSingleDetailsProduct(idOfProduct),
     );
 
-    const { data: productsRealtedData } = useFetch([], fetchProductRealted());
+    const { data: productsRealtedData } = useFetchWithFirebase(
+        [idOfProduct, singleProductData],
+        getProducstRealted(singleProductData?.categories?.name),
+    );
 
     return (
         <div className="product-details-wrapper">

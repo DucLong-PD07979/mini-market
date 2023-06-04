@@ -7,30 +7,10 @@ import { Link } from 'react-router-dom';
 const MenuItems = ({
     itemsData = [],
     toggle,
-    setTitle,
-    setImage,
-    handleFocus,
+    handleSetValueHeaderMenu,
     ...props
 }) => {
     const cs = classNames;
-
-    const handleSetValueHeaderMenu = (to, label, src, name) => {
-        if (to) {
-            return;
-        }
-
-        if (name) {
-            setTitle(name);
-        }
-
-        if (label) {
-            setTitle(label);
-        }
-        if (src) {
-            setImage(src);
-        }
-        handleFocus();
-    };
 
     return (
         <div className={cs('menu-wrap-item', { active: toggle })}>
@@ -60,9 +40,7 @@ const MenuItems = ({
 MenuItems.propTypes = {
     toggle: PropTypes.bool,
     itemsData: PropTypes.array,
-    setTitle: PropTypes.func.isRequired,
-    setImage: PropTypes.func,
-    handleFocus: PropTypes.func,
+    handleSetValueHeaderMenu: PropTypes.func.isRequired
 };
 
 export default MenuItems;

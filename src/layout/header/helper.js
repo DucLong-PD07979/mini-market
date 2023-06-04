@@ -209,46 +209,18 @@ export const categoriesItem = [
     {
         name: 'Music',
         iconLabel: <MusicIcon />,
-        subItems: [
-            {
-                name: 'Subitem 5.1',
-                subItems: [{ name: 'Subitem 5.1.1' }, { name: 'Subitem 5.1.2' }],
-            },
-            { name: 'Subitem 5.2' },
-        ],
     },
     {
         name: 'Motorbike',
         iconLabel: <MotoBikeIcon />,
-        subItems: [
-            {
-                name: 'Subitem 5.1',
-                subItems: [{ name: 'Subitem 5.1.1' }, { name: 'Subitem 5.1.2' }],
-            },
-            { name: 'Subitem 5.2' },
-        ],
     },
     {
         name: 'Metal-health',
         iconLabel: <MetalHealthIcon />,
-        subItems: [
-            {
-                name: 'Subitem 5.1',
-                subItems: [{ name: 'Subitem 5.1.1' }, { name: 'Subitem 5.1.2' }],
-            },
-            { name: 'Subitem 5.2' },
-        ],
     },
     {
         name: 'Others',
         iconLabel: <StoreIcon />,
-        subItems: [
-            {
-                name: 'Subitem 5.1',
-                subItems: [{ name: 'Subitem 5.1.1' }, { name: 'Subitem 5.1.2' }],
-            },
-            { name: 'Subitem 5.2' },
-        ],
     },
 ];
 

@@ -67,7 +67,7 @@ const BasketItem = ({ id, ...props }) => {
 };
 
 BasketItem.propTypes = {
-    id: PropTypes.number.isRequired,
+    id: PropTypes.string.isRequired,
     price: PropTypes.number.isRequired,
     images: PropTypes.oneOfType([PropTypes.string, PropTypes.array]).isRequired,
     title: PropTypes.string.isRequired,

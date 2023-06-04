@@ -342,7 +342,7 @@ header {
         .categories-list {
             --categoires-mini-with: 298px;
             position: absolute;
-            display: none; // flex
+            display: flex; 
             flex-direction: column;
             z-index: 10;
             top: 125%;
@@ -408,6 +408,10 @@ header {
                     }
                 }
             }
+        }
+
+        .categories-list--is-hidden{
+            display: none;   
         }
     }
 

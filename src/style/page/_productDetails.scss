@@ -25,7 +25,7 @@
                     gap: 12px;
                     margin-top: 48px;
 
-                    & > div {
+                    & > .list-images-item {
                         border-radius: 12px;
                         border: 1px solid $text-color;
                         overflow: hidden;
@@ -33,9 +33,13 @@
                         user-select: none;
 
                         img {
-                            width: 90px;
-                            height: 60px;
+                            width: 70px;
+                            height: 70px;
                         }
+                    }
+
+                    & > .list-image-item-active{
+                        border: 1px solid $primary-color
                     }
                 }
             }

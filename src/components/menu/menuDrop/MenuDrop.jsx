@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
+import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import HeaderMenu from './HeaderMenu';
 import MenuItems from './MenuItems';
 
-const MenuDrop = ({ icon, title, itemsData, src = false, ...props }) => {
+const MenuDrop = ({ icon, title, itemsData, src = false, getTitle, ...props }) => {
     const [toggle, setToggle] = useState(false);
     const [titleName, setTitleName] = useState(title);
     const [image, setImage] = useState(src);
@@ -16,6 +16,25 @@ const MenuDrop = ({ icon, title, itemsData, src = false, ...props }) => {
         setToggle(false);
     };
 
+    // label và name dùng cho mockup or dữ liệu của api trả về
+    const handleSetValueHeaderMenu = useCallback((to, label, src, name) => {
+        if (name) {
+            setTitleName(name);
+            getTitle(name);
+        }
+
+        if (label) {
+            setTitleName(label);
+            getTitle(name);
+        }
+
+        if (src) {
+            setImage(src);
+        }
+
+        handleFocusItem();
+    }, []);
+
     return (
         <div className="menu-drop-wrap">
             <HeaderMenu
@@ -27,9 +46,7 @@ const MenuDrop = ({ icon, title, itemsData, src = false, ...props }) => {
             <MenuItems
                 itemsData={itemsData}
                 toggle={toggle}
-                setTitle={setTitleName}
-                setImage={setImage}
-                handleFocus={handleFocusItem}
+                handleSetValueHeaderMenu={handleSetValueHeaderMenu}
             />
         </div>
     );
@@ -40,6 +57,7 @@ MenuDrop.propTypes = {
     title: PropTypes.string.isRequired,
     itemsData: PropTypes.array.isRequired,
     src: PropTypes.string,
+    getTitle: PropTypes.func,
 };
 
 export default MenuDrop;
