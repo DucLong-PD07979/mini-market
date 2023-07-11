@@ -5,8 +5,8 @@ import MenuDrop from '../../../components/menu/menuDrop/MenuDrop';
 import { useFetchWithFirebase } from '../../../hooks';
 import Wrapper from '../../../components/wrapper/Wrapper';
 import useDebonce from '../../../hooks/useDebonce';
-import { fetchSearchProducts } from '../../../services/api/productsServices';
 import firebaseServices from '../../../services/firebase/firebase.services';
+import { formatTextUpperCase } from '../../../util/helper';
 
 const Search = (props) => {
     const cs = classNames;
@@ -23,22 +23,14 @@ const Search = (props) => {
         setSearchValue(searchValue);
     };
 
-    // xử lí sau
-    // const { data: dataSearch } = useFetchWithFirebase(
-    //     [valueSearchDelay],
-    //     getSearchProducts(typeOfCategories, valueSearchDelay),
-    // );
+    const { data: dataSearch } = useFetchWithFirebase(
+        [valueSearchDelay, typeOfCategories],
+        getSearchProducts(typeOfCategories, formatTextUpperCase(valueSearchDelay)),
+    );
 
     useEffect(() => {
-        const fecthData = async () => {
-            let dataSearch = await fetchSearchProducts(valueSearchDelay);
-            setResultSearch(dataSearch.data);
-        };
-
-        return () => {
-            fecthData();
-        };
-    }, [valueSearchDelay]);
+        setResultSearch(dataSearch);
+    }, [dataSearch]);
 
     return (
         <div className={cs('header-search-wrap')}>

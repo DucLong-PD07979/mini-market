@@ -40,6 +40,8 @@ const Header = (props) => {
 
     const matchHome = useMatch('/');
     const [isOpenCategoriesList, setIsOpenCategoriesList] = useState(false);
+    const [, setCurrencyUnitTitle] = useState('');
+    const [, setCountry] = useState('');
 
     const handleToggleCategoriesList = (e) => {
         setIsOpenCategoriesList(!isOpenCategoriesList);
@@ -75,6 +77,7 @@ const Header = (props) => {
                                     src={images.US}
                                     title={'en'}
                                     itemsData={traslateData}
+                                    getTitle={setCurrencyUnitTitle}
                                 />
                             </div>
                             <div className={cs('header-top-currency')}>
@@ -82,6 +85,7 @@ const Header = (props) => {
                                     src={images.US}
                                     title={'use'}
                                     itemsData={currencyData}
+                                    getTitle={setCountry}
                                 />
                             </div>
                         </div>

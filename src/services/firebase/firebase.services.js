@@ -6,6 +6,8 @@ import {
     where,
     getDoc,
     doc,
+    orderBy,
+    startAt,
 } from 'firebase/firestore';
 import { database } from '../../config/firebaseConfig';
 
@@ -19,15 +21,17 @@ const firebaseServices = {
             const docRef = doc(database, nameDoc, ...props);
             return docRef;
         },
-        getProductsFlashDeal: async function (setData) {
-            const querySnapshot = await getDocs(this.queryHelper('products', limit(8)));
+        createLoopPushDataHelper: function (querySnapshot) {
             const dataRes = [];
-
             querySnapshot.forEach((doc) => {
                 dataRes.push({ id: doc.id, ...doc.data() });
             });
-
-            return setData(dataRes);
+            return dataRes;
+        },
+        getProductsFlashDeal: async function (setData) {
+            const querySnapshot = await getDocs(this.queryHelper('products', limit(8)));
+            const data = this.createLoopPushDataHelper(querySnapshot);
+            return setData(data);
         },
         getCarsProduct: async function (setData) {
             const querySnapshot = await getDocs(
@@ -37,14 +41,8 @@ const firebaseServices = {
                     limit(6),
                 ),
             );
-
-            const dataRes = [];
-
-            querySnapshot.forEach((doc) => {
-                dataRes.push({ id: doc.id, ...doc.data() });
-            });
-
-            return setData(dataRes);
+            const data = this.createLoopPushDataHelper(querySnapshot);
+            return setData(data);
         },
         getMobiPhonesProduct: async function (setData) {
             const querySnapshot = await getDocs(
@@ -54,25 +52,13 @@ const firebaseServices = {
                     limit(6),
                 ),
             );
-
-            const dataRes = [];
-
-            querySnapshot.forEach((doc) => {
-                dataRes.push({ id: doc.id, ...doc.data() });
-            });
-
-            return setData(dataRes);
+            const data = this.createLoopPushDataHelper(querySnapshot);
+            return setData(data);
         },
         getMoreForYou: async function (setData) {
             const querySnapshot = await getDocs(this.queryHelper('products', limit(8)));
-
-            const dataRes = [];
-
-            querySnapshot.forEach((doc) => {
-                dataRes.push({ id: doc.id, ...doc.data() });
-            });
-
-            return setData(dataRes);
+            const data = this.createLoopPushDataHelper(querySnapshot);
+            return setData(data);
         },
         getSingleDetailsProduct: function (idProduct) {
             return async function (setData) {
@@ -93,45 +79,28 @@ const firebaseServices = {
                         limit(4),
                     ),
                 );
-
-                const dataRes = [];
-
-                querySnapshot.forEach((doc) => {
-                    dataRes.push({ id: doc.id, ...doc.data() });
-                });
-
-                return setData(dataRes);
+                const data = this.createLoopPushDataHelper(querySnapshot);
+                return setData(data);
             };
         },
         getCategories: async function (setData) {
             const querySnapshot = await getDocs(this.queryHelper('categories', limit(6)));
-
-            const dataRes = [];
-
-            querySnapshot.forEach((doc) => {
-                dataRes.push({ id: doc.id, ...doc.data() });
-            });
-
-            return setData(dataRes);
+            const data = this.createLoopPushDataHelper(querySnapshot);
+            return setData(data);
         },
-        getSearchProducts: function (categoriesType,searchValue) {
+        getSearchProducts: function (categoriesType, valueSearch) {
             return async function (setData) {
                 const querySnapshot = await getDocs(
                     this.queryHelper(
                         'products',
-                        limit(6),
+                        limit(5),
+                        orderBy('title'),
+                        startAt(valueSearch),
                         where('categories.name', '==', categoriesType),
-                        where('title', '>=', searchValue),
                     ),
                 );
-
-                const dataRes = [];
-
-                querySnapshot.forEach((doc) => {
-                    dataRes.push({ id: doc.id, ...doc.data() });
-                });
-
-                return setData(dataRes);
+                const data = this.createLoopPushDataHelper(querySnapshot);
+                return setData(data);
             };
         },
     },

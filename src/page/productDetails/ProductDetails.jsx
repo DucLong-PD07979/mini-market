@@ -12,8 +12,10 @@ import Avatar from '../../components/avatar/Avatar';
 import { CardProduct } from '../../components/card';
 import useFetchWithFirebase from '../../hooks/useFetchWithFirebase';
 import firebaseServices from '../../services/firebase/firebase.services';
+import { useScrollToTop } from '../../hooks';
 
 const ProductDetails = (props) => {
+    useScrollToTop();
     const idOfProduct = useSelector((state) => state.basket.idSingleProduct);
     const { getSingleDetailsProduct, getProducstRealted } =
         firebaseServices.read_Data_To_Firebase;

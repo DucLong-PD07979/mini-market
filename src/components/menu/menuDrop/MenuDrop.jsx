@@ -17,23 +17,26 @@ const MenuDrop = ({ icon, title, itemsData, src = false, getTitle, ...props }) =
     };
 
     // label và name dùng cho mockup or dữ liệu của api trả về
-    const handleSetValueHeaderMenu = useCallback((to, label, src, name) => {
-        if (name) {
-            setTitleName(name);
-            getTitle(name);
-        }
+    const handleSetValueHeaderMenu = useCallback(
+        (to, label, src, name) => {
+            if (name) {
+                setTitleName(name);
+                getTitle(name);
+            }
 
-        if (label) {
-            setTitleName(label);
-            getTitle(name);
-        }
+            if (label) {
+                setTitleName(label);
+                getTitle(name);
+            }
 
-        if (src) {
-            setImage(src);
-        }
+            if (src) {
+                setImage(src);
+            }
 
-        handleFocusItem();
-    }, []);
+            handleFocusItem();
+        },
+        [getTitle],
+    );
 
     return (
         <div className="menu-drop-wrap">

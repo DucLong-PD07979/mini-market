@@ -157,59 +157,56 @@ const slideReponsive = Object.freeze({
         // when window width is >= 320px
         320: {
             slidesPerView: 1,
-            spaceBetween: 10,
         },
         480: {
             slidesPerView: 2,
-            spaceBetween: 16,
+            spaceBetween: 24,
         },
         640: {
             slidesPerView: 3,
-            spaceBetween: 20,
+            spaceBetween: 24,
         },
         1200: {
             slidesPerView: 4,
-            spaceBetween: 30,
+            spaceBetween: 24,
         },
     },
     categoriesView: {
         320: {
             slidesPerView: 1,
-            spaceBetween: 10,
         },
         480: {
             slidesPerView: 1,
-            spaceBetween: 16,
+            spaceBetween: 24,
         },
         640: {
             slidesPerView: 2,
-            spaceBetween: 20,
+            spaceBetween: 24,
         },
         900: {
             slidesPerView: 3,
-            spaceBetween: 30,
+            spaceBetween: 24,
         },
     },
     bigDiscountsView: {
         320: {
             slidesPerView: 1,
-            spaceBetween: 10,
         },
         480: {
             slidesPerView: 2,
-            spaceBetween: 16,
+            spaceBetween: 24,
         },
         640: {
             slidesPerView: 4,
-            spaceBetween: 20,
+            spaceBetween: 24,
         },
         900: {
             slidesPerView: 5,
-            spaceBetween: 30,
+            spaceBetween: 24,
         },
         1200: {
             slidesPerView: 6,
-            spaceBetween: 30,
+            spaceBetween: 24,
         },
     },
 });

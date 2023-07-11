@@ -20,9 +20,10 @@ import ListBrandRepesent from '../../components/ListBrand/ListBrandRepesent';
 import ImageLoaded from '../../components/imageLoaded/ImageLoaded';
 import { imagesHasLicense } from '../../util/helper/imagesHasLicense';
 import firebaseServices from '../../services/firebase/firebase.services';
-import { useFetchWithFirebase } from '../../hooks';
+import { useFetchWithFirebase, useScrollToTop } from '../../hooks';
 
 const Home = (props) => {
+    useScrollToTop();
     const cs = classNames;
     const {
         silderHero: { data: silderHeroData, GetHeroSliderElement },
