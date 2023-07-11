@@ -1,5 +1,5 @@
 .form-group {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     width: 100%;
     position: relative;
 }
@@ -30,6 +30,7 @@
     font-size: 1.5rem;
     color: $gray-second;
     font-weight: 500;
+    text-transform: capitalize;
 }
 
 .form-group {
@@ -62,6 +63,7 @@
 
 .form-group .error-mes {
     color: $primary-color;
-    margin-top: 0;
+    margin-top: -10px;
     opacity: 0.9;
+    font-size: 1.2rem;
 }

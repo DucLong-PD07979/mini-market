@@ -8,7 +8,7 @@ header {
         display: flex;
         align-items: center;
         justify-content: space-between;
-        font-size: 1.3rem;
+        font-size: 1.2rem;
 
         .header-inner {
             display: flex;
@@ -27,7 +27,7 @@ header {
         align-items: center;
 
         .header-icon {
-            margin-right: 12px;
+            margin-right: 10px;
 
             svg {
                 fill: $while-color;
@@ -36,7 +36,7 @@ header {
     }
 
     .wrapp-contact-icon + .wrapp-contact-icon {
-        margin-left: 18px;
+        margin-left: 14px;
     }
 
     .header-top-right {
@@ -46,7 +46,7 @@ header {
 
         .header-top-link {
             padding: 0 8px;
-            margin-right: 18px;
+            margin-right: 14px;
             display: flex;
             align-items: center;
             color: $while-color;
@@ -96,9 +96,10 @@ header {
             width: 100%;
             height: 100%;
             padding: 0 8px;
-            font-size: 1.6rem;
-            font-weight: 300;
+            font-size: 1.4rem;
+            font-weight: 400;
             color: currentColor;
+            text-transform: capitalize;
         }
 
         .search-with-categorie {
@@ -127,7 +128,7 @@ header {
             .menu-list .menu-list-item {
                 font-weight: 400;
                 text-transform: capitalize;
-                font-size: 1.6rem;
+                font-size: 1.4rem;
                 color: $gray-color;
                 @include transition(all, 0.2s, linear);
 
@@ -180,8 +181,8 @@ header {
 
         .avatar-user,
         .header-basket {
-            width: 50px;
-            height: 50px;
+            width: 44px;
+            height: 44px;
             background-color: $hover-color;
             border-radius: 999px;
             display: flex;
@@ -202,8 +203,8 @@ header {
             min-width: 20px;
             background-color: $primary-color;
             font-size: 1rem;
-            top: 0;
-            right: -4px;
+            top: -4px;
+            right: -8px;
             border-radius: 999px;
             display: flex;
             align-items: center;
@@ -241,7 +242,7 @@ header {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin: 16px 0 16px;
+        margin: 10px 0 10px;
         position: relative;
 
         span {
@@ -351,13 +352,14 @@ header {
             border-radius: 6px;
             padding: 6px 0;
             background-color: $while-color;
+            font-size: 1.4rem;
             @include boxsadow(0px, 4px, 16px, 0, rgba(43, 52, 69, 0.1));
 
             &-item-link {
                 display: flex;
                 align-items: center;
                 padding: 10px 16px;
-                color: rgb(125, 135, 156);
+                color: $text-color;
                 text-transform: capitalize;
 
                 .item-name {
@@ -417,6 +419,7 @@ header {
 
     .header-navbar-menu {
         color: $text-color;
+        font-size: 1.4rem;
 
         .header-menu-list {
             display: flex;

@@ -71,7 +71,7 @@
             flex-grow: 1;
             margin-right: 6px;
             .link-product {
-                font-size: 1.6rem;
+                font-size: 1.4rem;
                 color: $gray-second;
                 font-weight: 600;
                 margin-bottom: 6px;
@@ -99,12 +99,14 @@
                 font-weight: 600;
                 margin-bottom: 0;
                 margin-top: 8px;
+                font-size: 1.4rem;
             }
 
             .price-old {
                 color: $gray-color;
                 text-decoration: line-through;
                 margin-left: 6px;
+                font-size: 1.4rem;
             }
         }
 
@@ -119,10 +121,11 @@
 
         .btn-control {
             background-color: $while-color;
-            border: 1px solid $primary-color;
+            border: 1px solid $light-red;
             color: $primary-color;
             border-radius: 4px;
-            padding: 4px;
+            padding: 3px;
+            font-size: 1rem;
             cursor: pointer;
             user-select: none;
 

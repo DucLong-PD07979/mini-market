@@ -1,12 +1,12 @@
 @media only screen and (min-width: 0px) {
     .row {
-        margin: -5px;
+        margin: -10px;
         display: flex;
         flex-wrap: wrap;
     }
 
     .col {
-        padding: 5px;
+        padding: 10px;
     }
 
     .col-mobile-hidden {
@@ -22,11 +22,11 @@
 
 @media only screen and (min-width: 576px) {
     .row {
-        margin: -8px;
+        margin: -12px;
     }
 
     .col.col-gap {
-        padding: 8px;
+        padding: 12px;
     }
 
     @for $i from 1 through 12 {
@@ -38,11 +38,11 @@
 
 @media only screen and (min-width: 768px) {
     .row {
-        margin: -10px;
+        margin: -12px;
     }
 
     .col.col-gap {
-        padding: 10px;
+        padding: 12px;
     }
 
     .is-labtop-hidden {
@@ -58,11 +58,11 @@
 
 @media only screen and (min-width: 1024px) {
     .row {
-        margin: -15px;
+        margin: -12px;
     }
 
     .col.col-gap {
-        padding: 15px;
+        padding: 12px;
     }
 
     .is-pc-hidden {
@@ -78,11 +78,11 @@
 
 @media only screen and (min-width: 1200px) {
     .row {
-        margin: -15px;
+        margin: -12px;
     }
 
     .col.col-gap {
-        padding: 15px;
+        padding: 12px;
     }
 
     @for $i from 1 through 12 {
